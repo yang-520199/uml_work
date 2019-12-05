@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="uml2:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/uml2_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="uml2/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="uml2" />
+          <element id="dir-copy" path="D:/apache-tomcat-9.0.27" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/app/asus/product/11.2.0/dbhome_1/sqldeveloper/sqldeveloper/jdbc/lib/ojdbc6.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

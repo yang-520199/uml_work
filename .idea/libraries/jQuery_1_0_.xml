@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="jQuery 1.0." type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery" />
+      <option name="frameworkVersion" value="1.0." />
+      <sourceFilesUrls>
+        <item url="file://D:/迅雷下载/jquery-migrate-3.1.0.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://D:/迅雷下载/jquery-migrate-3.1.0.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

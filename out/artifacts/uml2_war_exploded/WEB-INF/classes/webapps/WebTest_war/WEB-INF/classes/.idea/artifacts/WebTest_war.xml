@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="WebTest:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebTest_war</output-path>
+    <root id="archive" name="WebTest_war.war">
+      <element id="artifact" artifact-name="WebTest:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/app/asus/product/11.2.0/dbhome_1/jdbc/lib/ojdbc6.jar" />
+          <element id="library" level="project" name="ojdbc5" />
+        </element>
+        <element id="directory" name="classes">
+          <element id="dir-copy" path="$PROJECT_DIR$" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

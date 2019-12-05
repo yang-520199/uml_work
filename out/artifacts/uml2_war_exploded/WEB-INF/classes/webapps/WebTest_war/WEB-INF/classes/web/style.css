@@ -1,0 +1,22 @@
+@charset "UTF-8";
+body{
+    font-family: Verdana;font-size: 14px;margin: 10px;}
+    #container{
+        margin: 0;width: 100%;
+    }
+    #header{
+        height: 50px;background: #99cc66;margin-bottom: 5px;
+    }
+    #topenu{
+        height: 30px;background: #c0c0c0;margin-bottom:5px ;
+    }
+    #letmenu{
+        float: left;width: 180px;background: #ccff99;
+    }
+    #content{
+        background: #ffa;
+    }
+    #footer{
+        height: 60px;background: #99cc66;
+        clear: both;
+    }

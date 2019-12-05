@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>管理界面</title>
+    <style>
+        .topnav{
+            overflow: hidden;
+            background-color: #333;
+        }
+        .topnav a{
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="topnav">
+    <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='none';document.getElementById('addfoodclass').style.display='';document.getElementById('addrestaurant').style.display='none';document.getElementById('alterrestaurant').style.display='none';document.getElementById('addfood').style.display='none';document.getElementById('alterfood').style.display='none';">添加菜品类型</a>
+    <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='';document.getElementById('addfoodclass').style.display='none';document.getElementById('addrestaurant').style.display='none';document.getElementById('alterrestaurant').style.display='none';document.getElementById('addfood').style.display='none';document.getElementById('alterfood').style.display='none';">修改菜品类型</a>
+    <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='none';document.getElementById('addfoodclass').style.display='none';document.getElementById('addrestaurant').style.display='';document.getElementById('alterrestaurant').style.display='none';document.getElementById('addfood').style.display='none';document.getElementById('alterfood').style.display='none';">增加饭店</a>
+    <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='none';document.getElementById('addfoodclass').style.display='none';document.getElementById('addrestaurant').style.display='none';document.getElementById('alterrestaurant').style.display='';document.getElementById('addfood').style.display='none';document.getElementById('alterfood').style.display='none';">修改饭店信息</a>
+    <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='none';document.getElementById('addfoodclass').style.display='none';document.getElementById('addrestaurant').style.display='none';document.getElementById('alterrestaurant').style.display='none';document.getElementById('addfood').style.display='';document.getElementById('alterfood').style.display='none';">增加菜品</a>
+    <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='none';document.getElementById('addfoodclass').style.display='none';document.getElementById('addrestaurant').style.display='none';document.getElementById('alterrestaurant').style.display='none';document.getElementById('addfood').style.display='none';document.getElementById('alterfood').style.display='';">修改菜品信息</a>
+</div>
+<div id="addfoodclass" style="display: none;position:relative;top: 50px;">
+
+    <label style="font-size: 25px">请输入菜品类别名称：</label><input type="text"style="width: 250px;height: 30px;"name="foodclass"id="foodclassname"><input type="button"value="添加"style="height: 30px;" onclick="addfoodclass()"><br>
+    <span id="showresult"></span>
+</div>
+<div id="alterfoodclass"style="display: none">
+   <table>
+       <th>食品类别</th>
+       <tr><td></td></tr>
+   </table>
+</div>
+
+</body>
+<script type="text/javascript">
+    var xmlHTTP;
+    function createXMLHttpRequest() {
+        if (window.XMLHttpRequest){
+            xmlHTTP=new XMLHttpRequest();
+        }
+        else {
+            xmlHTTP = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    }
+    function fixedEncodeURI (str) {
+        return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');
+    }
+
+    function addfoodclass() {
+        createXMLHttpRequest();
+        var foodname = document.getElementById("foodclassname");
+        console.log(foodname.value);
+        var url = "manager.do?foodclass=" + fixedEncodeURI(foodname.value);
+        console.log(url);
+
+        xmlHTTP.open("GET",url,true);
+        xmlHTTP.onreadystatechange = handleStateChange;
+        xmlHTTP.send(null);
+    }
+    function handleStateChange() {
+        if(xmlHTTP.readyState == 4){
+            if(xmlHTTP.status == 200){
+                document.getElementById("showresult").innerHTML=xmlHTTP.responseText;
+            }
+        }
+    }
+
+</script>
+</html>
