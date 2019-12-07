@@ -2,7 +2,6 @@ package com.deo;
 import java.sql.*;
 public class denglu {
     public int flag;
-
     public void denglu(String username,String realpassword){
         Connection con = null;
         Statement sql = null;

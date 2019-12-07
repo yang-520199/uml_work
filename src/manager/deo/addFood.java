@@ -2,6 +2,7 @@ package manager.deo;
 import manager.deo.food;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class addFood {
@@ -14,14 +15,15 @@ public class addFood {
             e.printStackTrace();
         }
         try {
-            String sql = "insert into FOOD values(?,?,?,?,?,?)";
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:shuju/123456@localhost:1521:orcl");
+            String sql = "insert into FOOD values(null ,?,?,?,?,?)";
             pstm = con.prepareStatement(sql);
-            pstm.setInt(1,f.getFood_id());
-            pstm.setString(2,f.getFood_name());
-            pstm.setInt(3,f.getFoodclass_id());
-            pstm.setString(4,f.getFood_photo());
-            pstm.setInt(5,f.getRes_id());
-            pstm.setString(6,f.getFood_directions());
+//            pstm.setInt(1,f.getFood_id());
+            pstm.setString(1,f.getFood_name());
+            pstm.setInt(2,f.getFoodclass_id());
+            pstm.setString(3,f.getFood_photo());
+            pstm.setInt(4,f.getRes_id());
+            pstm.setString(5,f.getFood_directions());
             pstm.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();

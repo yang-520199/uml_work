@@ -1,8 +1,11 @@
 package com.deo;
 
 import java.io.IOException;
+import javax.jms.Session;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 import java.sql.*;
 
 import com.deo.user;
@@ -19,17 +22,61 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+//        response.setHeader("Cache-Control","no-cache");
+//        response.setContentType("text/html");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        PrintWriter out = response.getWriter();
         denglu login = new denglu();
-        login.denglu(username, password);
-        if (login.flag == 1) {
-            RequestDispatcher rt = request.getRequestDispatcher("/index.html");
-            rt.forward(request, response);
-        } else {
-            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-            rd.forward(request, response);
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:shuju/123456@localhost:1521:orcl");
+            Statement sta = con.createStatement();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
         }
+
+        if (username.equals("admin")){
+            if (password.equals("admin")){
+                response.sendRedirect("manager.jsp");
+            }
+        }
+        else {
+            login.denglu(username, password);
+            if (login.flag == 1) {
+                var message = "登录成功,欢迎"+username+"用户登录";
+                try {
+                    Class.forName("oracle.jdbc.driver.OracleDriver");
+                    Connection con = DriverManager.getConnection("jdbc:oracle:thin:shuju/123456@localhost:1521:orcl");
+                    Statement sta = con.createStatement();
+                    String sql = "select * from USERR where USERR_NAME='"+username+"'";
+                    ResultSet rs = sta.executeQuery(sql);
+                    while (rs.next()){
+                        HttpSession session = request.getSession();
+                        session.setAttribute("name",username);
+                        session.setAttribute("sex",rs.getString(4));
+                        session.setAttribute("real_name",rs.getString(5));
+                        session.setAttribute("email",rs.getString(6));
+                        session.setAttribute("message",message);
+                        response.sendRedirect("display.jsp");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+//                HttpSession session = request.getSession();
+//                session.setAttribute("name",username);
+//                session.setAttribute("message",message);
+//                response.sendRedirect("display.jsp");
+
+            } else {
+                String message = "登录失败,请重新登录";
+                HttpSession session = request.getSession();
+                session.setAttribute("message",message);
+                response.sendRedirect("display.jsp");
+            }
+        }
+
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -48,7 +95,6 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             sta = con.createStatement();
             rt = sta.executeQuery(sq);
             rt.next();
-
             int row = rt.getInt(1);
             int usrid = 1706300000 + row;
             user.setUserid(usrid);

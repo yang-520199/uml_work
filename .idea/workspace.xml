@@ -6,7 +6,22 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="915ed266-ec66-4f4c-8c6e-2b93da1849dd" name="Default Changelist" comment="" />
+    <list default="true" id="915ed266-ec66-4f4c-8c6e-2b93da1849dd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_foodclass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_foodclass.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_restaurant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_restaurant.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/manager.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/deo/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/deo/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/deo/denglu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/deo/denglu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/deo/addFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/deo/addFood.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/deo/alter_food_Servlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/deo/delete_food_Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/deo/delete_food_Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/deo/food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/deo/food.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/alter_food.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/alter_food.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/alter_foodclass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/alter_foodclass.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/alter_restaurant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/alter_restaurant.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/manager.jsp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +51,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -51,6 +69,7 @@
   </component>
   <component name="ProjectId" id="1TpHBzgG0U2NvlYiJBIEXQ1NYRn" />
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="module" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -58,7 +77,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/tmp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -169,6 +188,11 @@
             <option name="CONTEXT_PATH" value="/uml2_war_exploded" />
           </settings>
         </artifact>
+        <file path="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/tmp">
+          <settings>
+            <option name="CONTEXT_PATH" value="/tmp" />
+          </settings>
+        </file>
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="_uml2" />
@@ -270,10 +294,38 @@
       <workItem from="1575442494394" duration="11666000" />
       <workItem from="1575459847355" duration="16146000" />
       <workItem from="1575507079515" duration="31403000" />
+      <workItem from="1575692925548" duration="31288000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

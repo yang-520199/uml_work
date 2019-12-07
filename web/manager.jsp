@@ -30,6 +30,7 @@
     </style>
 </head>
 <body>
+${message}
 <div class="topnav">
     <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='none';document.getElementById('addfoodclass').style.display='';document.getElementById('addrestaurant').style.display='none';document.getElementById('alterrestaurant').style.display='none';document.getElementById('addfood').style.display='none';document.getElementById('alterfood').style.display='none'">添加菜品类型</a>
     <a herf="#"onclick="document.getElementById('alterfoodclass').style.display='';document.getElementById('addfoodclass').style.display='none';document.getElementById('addrestaurant').style.display='none';document.getElementById('alterrestaurant').style.display='none';document.getElementById('addfood').style.display='none';document.getElementById('alterfood').style.display='none'">修改菜品类型</a>
@@ -55,7 +56,7 @@
                 ResultSet rs = sta.executeQuery(sql);
                 while (rs.next()){
         %>
-        <tr><td><%=rs.getString(2)%>></td><td><a href="delete?id=<%=rs.getInt(1)%>" onclick="showresult()">删除</a><label>|</label><a href="alter_foodclass.jsp?id=<%=rs.getInt(1)%>"target="iframe_b" onclick="document.getElementById('changeshow1').style.display=''">修改</a></td></tr>
+        <tr><td><%=rs.getString(2)%></td><td><a href="delete?id=<%=rs.getInt(1)%>" onclick="showresult()">删除</a><label>|</label><a href="alter_foodclass.jsp?id=<%=rs.getInt(1)%>"target="iframe_b" onclick="document.getElementById('changeshow1').style.display=''">修改</a></td></tr>
         <%
                 }
                 rs.close();
@@ -91,7 +92,7 @@
                 ResultSet rs = sta.executeQuery(sql);
                 while(rs.next()){
                     %>
-        <tr><td><%=rs.getString(2)%></td><td><a href="delete_restaurant?res_id=<%=rs.getInt(1)%>"onclick="document.getElementById('changeshow').style.display=''">删除</a><label>|</label><a onclick="document.getElementById('changeshow').style.display=''"href="alter_restaurant.jsp?id=<%=rs.getInt(1)%>" target="iframe_a" id="<%=rs.getInt(1)%>">修改</a></td></tr>
+        <tr><td><%=rs.getString(2)%></td><td><a href="delete_restaurant?res_id=<%=rs.getInt(1)%>"onclick="showresult()">删除</a><label>|</label><a onclick="document.getElementById('changeshow').style.display=''"href="alter_restaurant.jsp?id=<%=rs.getInt(1)%>" target="iframe_a" id="<%=rs.getInt(1)%>">修改</a></td></tr>
 
                 <% }
                 rs.close();
@@ -106,6 +107,71 @@
         <iframe src="alter_restaurant.jsp"name="iframe_a"width="500"height="300"></iframe>
     </div>
 </div>
+<div id="addfood"style="display: none">
+    <form action="commit_food.do"method="post"enctype="multipart/form-data">
+        <table>
+            <tr><td>请输入食品名称:</td><td><input type="text"name="food_name"></td></tr>
+            <tr><td>请选择食品分类:</td><td><select name="food_class">
+                <%
+                    Class.forName("oracle.jdbc.driver.OracleDriver");
+                    Connection con = DriverManager.getConnection("jdbc:oracle:thin:shuju/123456@localhost:1521:orcl");
+                    Statement sta = con.createStatement();
+                    String sql = "select * from FOODCLASS";
+                    ResultSet rs = sta.executeQuery(sql);
+                    while (rs.next()){
+                %>
+                <option value="<%=rs.getString(2)%>"><%=rs.getString(2)%></option>
+                <%}%>
+            </select></td></tr>
+            <tr><td>请选择要上传的图片:</td><td><input type="file"name="fileName"></td></tr>
+            <tr><td>请选择食品所在饭店:</td><td><select name="restaurant_name">
+                <%
+                    String sq = "select * from RESTAURANT";
+                    ResultSet rst = sta.executeQuery(sq);
+                    while (rst.next()){
+                %>
+                <option value="<%=rst.getString(2)%>"><%=rst.getString(2)%></option>
+                <%
+                    }
+                    rst.close();
+                    rs.close();
+                    sta.close();
+                    con.close();
+                %>
+            </select></td></tr>
+            <tr><td>请输入食品描述:</td><td><input type="text"name="description"></td></tr>
+
+        </table>
+            <input type="submit"value="提交">
+    </form>
+
+</div>
+<div id="alterfood"style="display: none">
+    <table>
+        <tr><td>食品类别名称</td><td>操作</td></tr>
+        <%
+            try {
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+                Connection con1 = DriverManager.getConnection("jdbc:oracle:thin:shuju/123456@localhost:1521:orcl");
+                Statement sta1 = con1.createStatement();
+                String sql1 = "select * from FOOD";
+                ResultSet rs1 = sta1.executeQuery(sql1);
+                while (rs1.next()){
+        %>
+        <tr><td><%=rs1.getString(2)%></td><td><a href="delete_food.do?id=<%=rs1.getInt(1)%>" onclick="showresult()">删除</a><label>|</label><a href="alter_food.jsp?id=<%=rs1.getInt(1)%>"target="iframe_c" onclick="document.getElementById('changeshow2').style.display=''">修改</a></td></tr>
+        <%
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        %>
+    </table>
+    <div id="changeshow2"style="display: none">
+    <iframe src="alter_food.jsp"name="iframe_c"width="500"height="300"></iframe>
+</div>
+</div>
+<img src="/tmp/2222.jpg">
   </body>
 <script type="text/javascript">
     var xmlHTTP;

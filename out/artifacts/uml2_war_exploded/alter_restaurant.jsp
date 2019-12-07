@@ -70,6 +70,11 @@
         if (xmlHTTP.readyState == 4){
             if (xmlHTTP.status == 200){
                 alert("修改成功");
+                document.getElementById("res_id").vale='';
+                document.getElementById("res_name").vale='';
+                document.getElementById("res_address").vale='';
+                document.getElementById("res_phone").vale='';
+
             }
         }
 

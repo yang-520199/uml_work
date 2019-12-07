@@ -69,6 +69,8 @@
             if (xmlHTTP.status == 200){
                 alert("食品类型修改成功");
                 document.getElementById("food_class_name").value='';
+                document.getElementById("food_class_id").value='';
+
             }
         }
 
