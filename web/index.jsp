@@ -33,7 +33,6 @@
     <div style="text-align: center ;position: absolute;left: 570px" >
       <form action="a.jsp" method="get" style="display: inline-table">
         <input type="submit" name="signup" value="注册" style="width: 160px;height: 30px;display: inline-table">
-
       </form>
     </div>
   </fieldset>

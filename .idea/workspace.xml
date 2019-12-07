@@ -8,19 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="915ed266-ec66-4f4c-8c6e-2b93da1849dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_foodclass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_foodclass.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_restaurant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/alter_restaurant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/uml2_war_exploded/manager.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/deo/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/deo/Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/deo/denglu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/deo/denglu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/manager/deo/addFood.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/deo/addFood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/manager/deo/alter_food_Servlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/manager/deo/delete_food_Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/deo/delete_food_Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/manager/deo/food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/deo/food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/alter_food.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/alter_food.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/alter_foodclass.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/alter_foodclass.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/alter_restaurant.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/alter_restaurant.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/manager.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/deo/yanzhengServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/deo/yanzhengServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/display.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/display.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -295,6 +286,7 @@
       <workItem from="1575459847355" duration="16146000" />
       <workItem from="1575507079515" duration="31403000" />
       <workItem from="1575692925548" duration="31288000" />
+      <workItem from="1575731848235" duration="5465000" />
     </task>
     <servers />
   </component>

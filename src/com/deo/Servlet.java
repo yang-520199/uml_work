@@ -105,10 +105,10 @@ public class Servlet extends javax.servlet.http.HttpServlet {
             user.setRealname(request.getParameter("realname"));
             user.setEmail(request.getParameter("email"));
             dao.adduser(user);
-            String message = "插入成功";
-            request.setAttribute("result", message);
-            RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
-            rd.forward(request, response);
+            String message = "注册成功";
+            HttpSession session = request.getSession();
+            session.setAttribute("message_register",message);
+            response.sendRedirect("display.jsp");
         } catch (Exception e) {
             e.printStackTrace();
         }

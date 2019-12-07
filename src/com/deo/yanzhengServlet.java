@@ -38,14 +38,10 @@ public class yanzhengServlet extends HttpServlet {
             String sql = "select * from userr where USERR_NAME='"+username+"'";
             rs = sta.executeQuery(sql);
             if(rs.next()){
-
                 message = "用户名已经存在";
-                System.out.println(message);
             }
             else {
-
                 message = "用户名可以使用";
-                System.out.println(message);
             }
 
         } catch (Exception e) {

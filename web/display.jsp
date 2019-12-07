@@ -16,7 +16,6 @@
     <title>餐饮评价系统</title>
 </head>
 <body>
-
 <div id="all">
 
     <div id="header">
@@ -26,7 +25,7 @@
             </div>
         </div>
         <div id="header-right">
-            <div class="header-right-a"><a href="index.html" class="pink">首页</a></div>
+            <div class="header-right-a"><a href="display.jsp" class="pink">首页</a></div>
             <div class="header-right-a"><a href="stars.html" class="pink">菜品之星</a></div>
             <div class="header-right-a"><a href="ranking.html" class="pink">菜品排名</a></div>
         </div>
@@ -81,8 +80,8 @@
                 </table>
                 <p style="text-align: center"><input type="button" id="search-btn" onclick="search()"value="搜索"></p>
             </div>
-            <div id="search">
-            </div>
+<%--            <div id="search">--%>
+<%--            </div>--%>
 
 `                <div id="restaurant-list" >
                     <div id="enter" style="background-color: aquamarine">
@@ -97,7 +96,7 @@
                             ResultSet rs3=statement.executeQuery(sql4);
                             while (rs3.next()){
                         %>
-                        <p style="height: 25px; background-color: aquamarine; align-self: center"><a href="hehemalaxiangguo.html"><%=rs3.getString(2)%></a></p>
+                        <p style="height: 25px; background-color: aquamarine; align-self: center"><a href="food_menu.jsp?id=<%=rs3.getInt(1)%>&name=<%=rs3.getString(2)%>"target="iframe_menu"onclick="document.getElementById('food_menu').style.display='';document.getElementById('right-content').style.display='none';"><%=rs3.getString(2)%></a></p>
                         <%
                             }
                             rs3.close();
@@ -114,7 +113,11 @@
                 <input type="submit" name="login" value="登录" style="width: 80px;height: 30px;display:inline-table;">
                 <input type="reset" name="reset" value="重置" style="width: 80px;height: 30px;display:inline-table;">
                 </form>
+                <form action="register.jsp" method="get" style="display: inline-table">
+                    <input type="submit" name="signup" value="注册" style="width: 160px;height: 30px;display: inline-table">
+                </form>
             </div>
+            ${sessionScope.message_register}
             ${sessionScope.message}
             <div>
                 <p>用户名：${sessionScope.name}</p>
@@ -150,8 +153,12 @@
                 connection.close();
             %>
         </div>
+        <div id="search">
+        </div>
+        <div id="food_menu"style="display: none">
+            <iframe name="iframe_menu" src="food_menu.jsp" marginwidth=0 marginheight=0 width="800"height="500"></iframe>
+        </div>
     </div>
-
     <div id="footer">
         winnerwinter
     </div>
@@ -185,13 +192,10 @@
     function handleStateChange() {
         if (xmlHTTP.readyState == 4){
             if (xmlHTTP.status == 200){
-                document.getElementById("search_name").vale='';
-                document.getElementById("search").innerHTML="<p>载入成功</p>";
-                document.getElementById("search").innerHTML="<iframe name=\"content_frame\" marginwidth=0 marginheight=0 width=\"500\"height=\"300\" src=\"search_show.jsp\" frameborder=0></iframe> "
+                document.getElementById("right-content").style.display='none';
+                document.getElementById("search").innerHTML="<p style='font-size: x-large;color: red '>搜索结果如下</p><iframe name=\"content_frame\" marginwidth=0 marginheight=0 width=\"500\"height=\"300\" src=\"search_show.jsp\" frameborder=0></iframe> "
             }
         }
-
     }
-
 </script>
 </html>
